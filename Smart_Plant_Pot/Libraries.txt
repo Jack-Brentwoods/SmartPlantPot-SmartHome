@@ -1,0 +1,6 @@
+Các thư viện cần tải về trước khi sử dụng hệ thống:
+
+- DHT sensor library by Adafruit
+- Adafruit Unified Sensor
+- Blynk by Volodymyr Shymanskyy
+- Blynk_Async_ESP32_BT_WF by Khoi Hoang
