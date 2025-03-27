@@ -1,0 +1,7 @@
+Các thư viện cần cài đặt trước khi sử dụng hệ thống:
+- MFRC522 by GithubCommunity
+- LiquidCrystal_I2C by Marco Schwart
+- DHT sensor library by Adafruit
+- Adafruit Unified Sensor
+- Blynk by Volodymyr Shymanskyy
+- Blynk_Async_ESP32_BT_WF by Khoi Hoang
