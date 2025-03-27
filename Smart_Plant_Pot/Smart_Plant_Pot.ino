@@ -1,7 +1,9 @@
+// Định nghĩa ID và NAME của Template Blynk, kèm theo đó là code authorization
 #define BLYNK_TEMPLATE_ID "TMPL68wawUncQ"
 #define BLYNK_TEMPLATE_NAME "haha"
-#define BLYNK_AUTH_TOKEN "WxvBqt6oYUpUS3izyIh-5W_mKDc41mdu"
+#define BLYNK_AUTH_TOKEN "WxvBqt6oYUpUS3izyIh-5W_mKDc41mdu"  
 
+// Khai báo các thư viện cần thiết
 #include <WiFi.h>
 #include <BlynkSimpleEsp32.h>
 #include <Adafruit_Sensor.h>
@@ -20,10 +22,11 @@ int temperature;
 int humidity;
 int moisture;
 
-// WiFi & MQTT credentials
+// Thông tin Wifi
 const char *ssid = "3003";
 const char *pswrd = "lam010171";
 
+// Thông tin wifi và auth để kết nối với Blynk
 char auth[] = "WxvBqt6oYUpUS3izyIh-5W_mKDc41mdu";
 char wifi[] = "3003";
 char psw[] = "lam010171";
@@ -35,7 +38,7 @@ char psw[] = "lam010171";
 #define PUMP_PIN 18       // Chân GPIO cho động cơ
 const int moisturePin = 34;  // Chân ADC kết nối với AO của cảm biến
 
-
+// Hàm kết nối Wifi
 void setup_wifi() {
   delay(10);
   Serial.print("Connecting to ");
@@ -91,6 +94,7 @@ void loop() {
   Blynk.virtualWrite(VIRTUAL_HUMID, humidity);
   Blynk.virtualWrite(VIRTUAL_MOIST, moisture);
 
+  // Tùy vào data độ ẩm đất để bật/tắt máy bơm nước
   if (moisture <= 10) {
     digitalWrite(PUMP_PIN, HIGH); // Bật bơm
     Serial.println("🟢 Bật máy bơm - Đất khô!");
